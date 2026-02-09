@@ -2,7 +2,8 @@
 /* CSS HEX */
 :root {
   /*Background gradient colors*/
-  --space-indigo: #25283dff;
+  --space-indigo: #25283d;
+  --nav-background: rgba(37, 40, 61, 0.8);
   --icy-aqua: #bcf8ecff;
   /*Accent colors*/
   --light-blue: #aed9e0ff;
@@ -18,19 +19,22 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
-  scroll-padding-top: 160px;
+  scroll-padding-top: 80px;
 }
 /* Header styles */
 .header {
-  padding: 20px;
+  padding: 40px 20px;
   text-align: left;
   display: flex;
   align-items: center;
   gap: 20px;
-  color: var(--cotton-rose)
+  color: var(--cotton-rose);
+  margin-bottom: 80px;
 }
 .header p {
   color: var(--lavender-grey);
+  padding: 40px 0;
+  margin: 300px 0;
 }
 .header img {
   width: 180px;
@@ -43,13 +47,16 @@ body {
 
 /* Navigation bar styles */
 .navbar {
-  background-color: var(--space-indigo);
+  background-color: var(--nav-background);
   display: flex;
   padding: 10px 0;
 }
 /* Change link color when hovered */
 .nav-link:hover {
   color: var(--cotton-rose); /* Accent color on hover */
+}
+section {
+  scroll-margin-top: 250px;
 }
 
 .main {
@@ -60,6 +67,19 @@ body {
   max-width: 900px;
   margin: 0 auto;
 }
+
+.main h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.solid-divider {
+  border: none;
+  height: 4px;
+  background-color: var(--light-blue);
+  margin: 80px 0;
+}
+
 
 /* Card styles */
 .card {
