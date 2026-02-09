@@ -27,6 +27,9 @@ body {
   gap: 20px;
   color: var(--cotton-rose)
 }
+.header p {
+  color: var(--lavender-grey);
+}
 .header img {
   width: 180px;
   height: 180px;
