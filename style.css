@@ -67,7 +67,8 @@ nav {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   padding: 15px;
-  width: 40%;
+  flex: 1;
+  min-width: 280px;
 }
 
 
@@ -79,10 +80,6 @@ nav {
   margin: 0 auto;
 }
 
-.contact-cards .card {
-  flex: 1;
-  min-width: 280px;
-}
 
 @media (max-width: 768px) {
   .header {
