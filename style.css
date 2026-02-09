@@ -43,16 +43,41 @@ nav {
   display: flex;
   padding: 10px 0;
 }
-
 /* Change link color when hovered */
 .nav-link:hover {
   color: #ef8354; /* Accent color on hover */
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-  .row {
-    -webkit-flex-direction: column;
+/* Card styles */
+.card {
+  background-color: transparent;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 15px;
+  width: 40%;
+}
+
+
+.contact-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-cards .card {
+  flex: 1;
+  min-width: 280px;
+}
+
+@media (max-width: 768px) {
+  .header {
     flex-direction: column;
+    text-align: center;
+  }
+  .header img {
+    margin: 0;
   }
 }
