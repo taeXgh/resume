@@ -48,6 +48,15 @@ nav {
   color: #ef8354; /* Accent color on hover */
 }
 
+.main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 /* Card styles */
 .card {
   background-color: transparent;
