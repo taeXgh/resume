@@ -73,23 +73,24 @@
           </ul>
         </div>
       </div>
-      <!-- <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link" href="#scrollspyHeading1">First</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#scrollspyHeading2">Second</a>
-        </li>
-      </ul> -->
     </nav>
 
     <!-- Main header -->
     <header class="header">
-      <h1 class="display-1">Hi, I'm Thalia Edwards</h1>
-      <!-- Short introduction -->
-      <p class="lead">Senior IT Student @ GMU</p>
+      <div class="container-md">
+        <div class="row">
+          <div class="col">
+            <h1 class="display-1">Hi, I'm Thalia</h1>
+            
+        </div>
+        <div class="col">
       <!-- Headshot -->
-      <img src="img/me.jpg" alt="My Headshot" class="headshot" />
+      <img src="img/me.jpg" alt="My Headshot" class="headshot" /> </div>       
+      </div>
+
+      <div class="row">
+            <p class="lead">Senior IT Student @ GMU</p></div>
+          </div>
     </header>
     <main class="main">
       <!-- Solid Divider -->
@@ -133,7 +134,7 @@
       <section id="contact">
         <h2>Contact Information</h2>
         <div class="contact-cards">
-          <div class="card">
+          <div id="contact-card" class="card">
             <a href="mailto:thalia.edwards2203@gmail.com">
               <img src="img/gmail.png" class="card-img-top" alt="Gmail logo"
             /></a>
@@ -145,7 +146,7 @@
               </p>
             </div>
           </div>
-          <div class="card">
+          <div id="contact-card" class="card">
             <a
               href="https://www.linkedin.com/in/thaliaedwards24"
               target="_blank"
@@ -192,24 +193,28 @@
       <!-- Skills section -->
       <section id="skills">
         <h2>Skills</h2>
-        <ul>
-          <li>
-            <h4>Programming:</h4>
-            Python, JavaScript (Node.js), C++, HTML/CSS
-          </li>
-          <li>
-            <h4>Tools & Workflows:</h4>
-            Git, VS Code, unit testing, basic CI/CD concepts, Postman
-          </li>
-          <li>
-            <h4>Backend & Databases:</h4>
-            REST APIs, PL/SQL, SQL/MySQL basics
-          </li>
-          <li>
-            <h4>OS & Platforms:</h4>
-            Linux, Windows
-          </li>
-        </ul>
+        <div id="skills-card" class="card">
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item-dark">
+                <h4>Programming:</h4>
+                Python, JavaScript (Node.js), C++, HTML/CSS
+              </li>
+              <li class="list-group-item-dark">
+                <h4>Tools & Workflows:</h4>
+                Git, VS Code, unit testing, basic CI/CD concepts, Postman
+              </li>
+              <li class="list-group-item-dark">
+                <h4>Backend & Databases:</h4>
+                REST APIs, PL/SQL, SQL/MySQL basics
+              </li>
+              <li class="list-group-item-dark">
+                <h4>OS & Platforms:</h4>
+                Linux, Windows
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
       <!-- Solid Divider -->
       <hr class="solid-divider" />

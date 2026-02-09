@@ -58,7 +58,7 @@ body {
 section {
   scroll-margin-top: 250px;
 }
-
+/* Main content styles */
 .main {
   padding: 20px;
   display: flex;
@@ -101,7 +101,13 @@ section {
   flex: 1;
   min-width: 280px;
 }
+#contact-card:hover {
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+}
 
+#skills-card {
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+}
 
 .contact-cards {
   display: flex;
@@ -111,6 +117,14 @@ section {
   margin: 0 auto;
 }
 
+/* Footer styles */
+.footer {
+  text-align: center;
+  color: var(--space-indigo);
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+}
 
 @media (max-width: 768px) {
   .header {
