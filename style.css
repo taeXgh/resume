@@ -17,6 +17,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+  position: relative;
+  scroll-padding-top: 160px;
 }
 /* Header styles */
 .header {
@@ -40,15 +42,14 @@ body {
 }
 
 /* Navigation bar styles */
-nav {
-  color: #ccc;
+.navbar {
   background-color: var(--space-indigo);
   display: flex;
   padding: 10px 0;
 }
 /* Change link color when hovered */
 .nav-link:hover {
-  color: #ef8354; /* Accent color on hover */
+  color: var(--cotton-rose); /* Accent color on hover */
 }
 
 .main {
