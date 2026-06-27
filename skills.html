@@ -3,31 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Thalia Edwards</title>
+    <title>Stack Overview | Thalia Edwards</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-
     <link rel="stylesheet" href="style.css" />
   </head>
-
-  <body
-    data-bs-spy="scroll"
-    data-bs-target="#navbar"
-    data-bs-offset="80"
-    tabindex="0"
-  >
-    <!-- Nav bar -->
-    <nav
-      id="navbar"
-      class="navbar navbar-expand-lg navbar-dark sticky-top"
-      height="80"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"> visitor@TE:~$ </a>
+  <body tabindex="0">
+    <!-- Shared nav shell: this page is a quick skill reference. -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid site-shell">
+        <a class="navbar-brand brand-mark" href="index.html">visitor@TAE:~$</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -40,74 +36,83 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="name.html">Full Name</a>
+              <a class="nav-link" href="name.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="career.html">Career Objective</a>
+              <a class="nav-link" href="career.html">Capstone</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="education.html">Hackathon</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="work-experience.html">Anime Tracker</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#stack">Stack</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="education.html">Education</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="skills.html">Skills</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="work-experience.html">Work Experience</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://github.com/taeXgh"
-                target="_blank"
-                >GitHub</a
-              >
             </li>
           </ul>
         </div>
       </div>
     </nav>
- <!-- Main header -->
-    <main class="main">
-      <!-- Solid Divider -->
-      <hr class="solid-divider" />
- <!-- Skills section -->
-      <section id="skills">
-        <h2>Skills</h2>
-        <div id="skills-card" class="card">
-          <div class="card-body">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item-dark">
-                <h4>Programming:</h4>
-                Python, JavaScript (Node.js), C++, HTML/CSS
-              </li>
-              <li class="list-group-item-dark">
-                <h4>Tools & Workflows:</h4>
-                Git, VS Code, unit testing, basic CI/CD concepts, Postman
-              </li>
-              <li class="list-group-item-dark">
-                <h4>Backend & Databases:</h4>
-                REST APIs, PL/SQL, SQL/MySQL basics
-              </li>
-              <li class="list-group-item-dark">
-                <h4>OS & Platforms:</h4>
-                Linux, Windows
-              </li>
-            </ul>
-          </div>
+
+    <main>
+      <!-- Page intro: what I can do right now. -->
+      <header class="section-shell hero">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Stack</p>
+          <h1>The tools I reach for most often.</h1>
+          <p>
+            This is the fast version of my technical background. It is
+            intentionally recruiter-friendly and easy to scan.
+          </p>
+        </div>
+      </header>
+
+      <!-- Main content: grouped by frontend, backend, workflow, and focus. -->
+      <section id="stack" class="section-shell">
+        <div class="skill-grid">
+          <article class="skill-card reveal">
+            <h2>Frontend</h2>
+            <p>React, Next.js, TypeScript, JavaScript, HTML, CSS, Bootstrap.</p>
+          </article>
+          <article class="skill-card reveal">
+            <h2>Backend</h2>
+            <p>
+              Express, Node.js, REST APIs, Supabase, SQL, and general database
+              work.
+            </p>
+          </article>
+          <article class="skill-card reveal">
+            <h2>Workflow</h2>
+            <p>
+              Git, GitHub, VS Code, debugging, testing mindset, and deployment
+              basics.
+            </p>
+          </article>
+          <article class="skill-card reveal">
+            <h2>Focus</h2>
+            <p>
+              Responsive layouts, accessible interfaces, polished visuals, and
+              clean handoff-ready code.
+            </p>
+          </article>
         </div>
       </section>
-      <!-- Solid Divider -->
-      <hr class="solid-divider" />
-      <footer class="footer">
-        <p>&copy; 2026 Thalia Edwards. All rights reserved.</p>
+
+      <!-- Footer: short and consistent. -->
+      <footer class="footer section-shell">
+        <p>
+          &copy; 2026 Thalia Edwards. Built with a little chaos and a lot of
+          care.
+        </p>
       </footer>
     </main>
 

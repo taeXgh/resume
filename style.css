@@ -1,156 +1,545 @@
-/* style.css - Basic styles for portfolio website */
-/* CSS HEX */
+/* Design tokens: the palette and spacing values used everywhere else. */
 :root {
-  /*Background gradient colors*/
-  --space-indigo: #25283d;
-  --nav-background: rgba(37, 40, 61, 0.8);
-  --icy-aqua: #bcf8ecff;
-  /*Accent colors*/
-  --light-blue: #aed9e0ff;
-  --lavender-grey: #9fa0c3ff;
-  --dusty-mauve: #9a7aa0ff;
-  --cotton-rose: #ceabb1ff;
+  --bg: #070b14;
+  --bg-elevated: rgba(10, 16, 29, 0.76);
+  --bg-soft: rgba(15, 24, 43, 0.88);
+  --text: #f4f6fb;
+  --muted: rgba(244, 246, 251, 0.76);
+  --line: rgba(138, 191, 255, 0.18);
+  --aqua: #76f0df;
+  --blue: #5fb1ff;
+  --gold: #ffc940;
+  --rose: #f58cc6;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+  --radius-xl: 28px;
+  --radius-lg: 22px;
+  --radius-md: 18px;
+  --max-width: 1140px;
+}
+
+/* Base reset and page-wide defaults. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: linear-gradient(135deg, var(--space-indigo), var(--icy-aqua));
-  color: #242121;
-  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  padding: 0;
+  color: var(--text);
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(95, 177, 255, 0.24),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(117, 240, 223, 0.18),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at bottom center,
+      rgba(245, 140, 198, 0.16),
+      transparent 32%
+    ),
+    linear-gradient(145deg, #05070f 0%, #0a1020 55%, #060913 100%);
+  min-height: 100vh;
   position: relative;
-  scroll-padding-top: 80px;
-}
-/* Header styles */
-.header {
-  display: flex;
-  align-items: center;
-  color: var(--cotton-rose);
-  margin-top: 100px;
-  margin-bottom: 200px;
-  text-align: center;
-  font-size: larger;
-}
-.header p {
-  color: var(--lavender-grey);
-}
-.header img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  flex-shrink: 0;
-  /* margin-right: 300px; */
-}
-.header #learn-more-row {
-  margin-top: 350px;
+  scroll-padding-top: 110px;
 }
 
-/* Navigation bar styles */
+/* Soft grid overlay to keep the page feeling technical without getting loud. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(circle at center, black, transparent 92%);
+  opacity: 0.35;
+}
+
+/* Shared typography: headings, nav labels, pills, and buttons use the display font. */
+h1,
+h2,
+h3,
+.navbar-brand,
+.eyebrow,
+.button,
+.tag,
+.pill {
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+}
+
+/* Layout wrappers that keep content centered and readable. */
+a {
+  color: inherit;
+}
+
+.site-shell,
+.section-shell {
+  width: min(var(--max-width), calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+/* Navigation shell: sticky, blurred, and intentionally understated. */
 .navbar {
-  background-color: var(--nav-background);
+  background: rgba(6, 10, 20, 0.66);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar .site-shell {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.brand-mark {
+  color: var(--gold) !important;
+  letter-spacing: 0.06em;
+}
+
+.nav-link {
+  color: rgba(244, 246, 251, 0.8) !important;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active,
+.nav-link:focus-visible {
+  color: var(--aqua) !important;
+}
+
+.nav-link-highlight {
+  padding-inline: 1rem;
+  border: 1px solid rgba(117, 240, 223, 0.24);
+  border-radius: 999px;
+  background: rgba(117, 240, 223, 0.08);
+}
+
+.nav-link-highlight:hover {
+  background: rgba(117, 240, 223, 0.16);
+}
+
+/* Major page sections share the same vertical spacing. */
+.hero,
+.section-shell {
+  padding: 4.5rem 0;
+}
+
+.hero {
+  padding-top: 5.5rem;
+}
+
+/* Grid layouts used by the main page sections. */
+.hero-grid,
+.split-layout,
+.project-grid,
+.interest-grid,
+.skill-grid,
+.contact-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.9fr);
+  align-items: center;
+}
+
+/* Hero and section headlines need heavier visual weight. */
+.hero-copy h1,
+.section-heading h2 {
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+}
+
+.hero-copy h1 {
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  margin: 0.35rem 0 1rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  color: var(--aqua);
+}
+
+/* Intro copy in the hero gets a little extra breathing room. */
+.hero-lead {
+  max-width: 42rem;
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  color: rgba(244, 246, 251, 0.94);
+}
+
+/* Body copy color is slightly muted so the headings stay dominant. */
+.hero-body,
+.section-heading p,
+.story-card p,
+.project-card p,
+.skill-card p,
+.interest-card p,
+.contact-card p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+/* Button and chip rows are grouped with flex so they wrap cleanly. */
+.hero-actions,
+.hero-badges,
+.tag-row,
+.project-topline {
   display: flex;
-  padding: 10px 0;
-}
-/* Change link color when hovered */
-.nav-link:hover {
-  color: var(--cotton-rose); /* Accent color on hover */
-}
-section {
-  scroll-margin-top: 250px;
-}
-/* Main content styles */
-.main {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.main h2 {
-  /* margin-top: 20px; */
-  margin-bottom: 20px;
-}
-
-.solid-divider {
-  border: none;
-  height: 4px;
-  background-color: var(--light-blue);
-  margin: 80px 0;
-}
-
-#name-logo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-}
-
-.education-logo {
-  width: 40%;
-  height: auto;
-}
-
-/* Card styles */
-.card {
-  background-color: transparent;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  padding: 15px;
-  flex: 1;
-  min-width: 280px;
-}
-#mail-card:hover {
-  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
-}
-
-#linkedin-card:hover {
-  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
-}
-
-#skills-card {
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.contact-cards {
-  display: flex;
-  gap: 20px;
   flex-wrap: wrap;
-  max-width: 600px;
-  margin: 0 auto;
+  gap: 0.75rem;
 }
 
-/* Footer styles */
-.footer {
-  text-align: center;
-  color: var(--space-indigo);
-  position: relative;
+.hero-actions {
+  margin: 1.75rem 0 1.25rem;
+}
+
+/* Reusable pill buttons. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.9rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.button:hover,
+.button:focus-visible,
+.contact-card:hover,
+.project-card:hover,
+.interest-card:hover,
+.skill-card:hover,
+.story-card:hover,
+.hero-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Primary CTA button. */
+.button-primary {
+  color: #071019;
+  background: linear-gradient(135deg, var(--gold), var(--aqua));
+  box-shadow: 0 18px 40px rgba(117, 240, 223, 0.24);
+}
+
+/* Secondary CTA button. */
+.button-secondary {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.button-sm {
+  min-height: 40px;
+  padding: 0.7rem 1rem;
+}
+
+.project-actions {
+  margin-top: 1rem;
+}
+
+/* Tiny status chips used throughout the page. */
+.pill,
+.tag,
+.project-status,
+.project-type {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(244, 246, 251, 0.92);
+  font-size: 0.9rem;
+}
+
+/* Card surfaces across the site share the same visual language. */
+.hero-card,
+.project-card,
+.story-card,
+.interest-card,
+.skill-card,
+.contact-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(
+    180deg,
+    rgba(20, 28, 48, 0.88),
+    rgba(9, 15, 27, 0.92)
+  );
+  box-shadow: var(--shadow);
+}
+
+/* Hero card: portrait plus a short profile summary. */
+.hero-card {
+  padding: 1rem;
+}
+
+.hero-photo {
   width: 100%;
-  margin-top: 120px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: calc(var(--radius-xl) - 8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    text-align: center;
+/* Split the hero card into logo and copy. */
+
+.brand-art {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Card titles use the display font for consistency. */
+.hero-card h2,
+.section-heading h2,
+.project-card h3,
+.story-card h3,
+.interest-card h3,
+.skill-card h3,
+.contact-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+/* Section intro blocks stay narrow so they scan quickly. */
+.section-heading {
+  max-width: 46rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin: 0.35rem 0 1rem;
+}
+
+/* Project cards form the main three-column feature area. */
+.project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Shared inner padding for content cards. */
+.project-card,
+.story-card,
+.interest-card,
+.skill-card,
+.contact-card {
+  padding: 1.4rem;
+}
+
+/* Small label row at the top of each project card. */
+.project-topline {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.project-card h3,
+.story-card h3,
+.interest-card h3,
+.skill-card h3,
+.contact-card h3 {
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  letter-spacing: -0.03em;
+}
+
+/* Bullet list that highlights the why, not just the what. */
+.project-points {
+  margin: 1rem 0 1.25rem;
+  padding-left: 1.1rem;
+  color: rgba(244, 246, 251, 0.84);
+}
+
+.project-points li + li {
+  margin-top: 0.55rem;
+}
+
+/* Two-column about section. */
+.split-section {
+  scroll-padding-top: 2rem;
+}
+
+.split-layout {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+}
+
+/* Accent panel for the quick fact box. */
+.story-card-accent {
+  background: linear-gradient(
+    160deg,
+    rgba(95, 177, 255, 0.15),
+    rgba(117, 240, 223, 0.1) 55%,
+    rgba(10, 16, 29, 0.95)
+  );
+}
+
+/* Compact facts laid out as a stack of small blocks. */
+.stat-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.stat-grid strong,
+.contact-card p,
+.project-type,
+.project-status {
+  display: block;
+}
+
+.stat-grid span {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--muted);
+}
+
+/* Interest cards are meant to feel like a visual personality board. */
+.interest-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Icon-like labels inside the interest cards. */
+.interest-card span {
+  display: inline-flex;
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Skills use a simple two-column layout on desktop. */
+.skill-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Contact section gets extra bottom padding so the footer has room. */
+.contact-shell {
+  padding-bottom: 6rem;
+}
+
+/* Contact links are treated like cards so they read as actions, not decoration. */
+.contact-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contact-card {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 1rem;
+  align-items: center;
+  text-decoration: none;
+}
+
+.contact-card img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Footer stays small on purpose. */
+.footer {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  color: rgba(244, 246, 251, 0.7);
+}
+
+/* Entry animation for sections and cards. */
+.reveal {
+  animation: rise 0.75s ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
   }
-  .header img {
-    margin: 0;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 600px) {
-  .contact-cards {
-    flex-direction: column;
-    align-items: center;
+@media (max-width: 991px) {
+  .hero-grid,
+  .split-layout,
+  .project-grid,
+  .interest-grid,
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-grid,
+  .split-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid,
+  .interest-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr;
   }
 }
 
+@media (max-width: 767px) {
+  .hero,
+  .section-shell {
+    width: min(var(--max-width), calc(100% - 1.2rem));
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
 
-@media (max-width: 900px) {
-  .main {
-    padding: 10px;
+  .hero {
+    padding-top: 4rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3rem, 14vw, 4.5rem);
+  }
+
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    width: 100%;
   }
 }

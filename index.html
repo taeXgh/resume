@@ -3,31 +3,36 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Thalia Edwards</title>
+    <meta
+      name="description"
+      content="Thalia Edwards is a senior IT student and builder who makes playful, polished web experiences and ships projects with personality."
+    />
+    <title>Thalia Edwards | Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body
     data-bs-spy="scroll"
     data-bs-target="#navbar"
-    data-bs-offset="80"
+    data-bs-offset="96"
     tabindex="0"
   >
-   <!-- Nav bar -->
-    <nav
-      id="navbar"
-      class="navbar navbar-expand-lg navbar-dark sticky-top"
-      height="80"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"> visitor@TE:~$ </a>
+    <!-- Primary navigation: keep this consistent across every page. -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid site-shell">
+        <a class="navbar-brand brand-mark" href="#home">visitor@TAE:~$</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -40,33 +45,31 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link active" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="name.html">Full Name</a>
+              <a class="nav-link" href="#projects">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="career.html">Career Objective</a>
+              <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="#interests">Interests</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="education.html">Education</a>
+              <a class="nav-link" href="#skills">Stack</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="skills.html">Skills</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="work-experience.html">Work Experience</a>
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
             <li class="nav-item">
               <a
-                class="nav-link"
+                class="nav-link nav-link-highlight"
                 href="https://github.com/taeXgh"
                 target="_blank"
+                rel="noreferrer"
                 >GitHub</a
               >
             </li>
@@ -75,169 +78,350 @@
       </div>
     </nav>
 
-    <!-- Main header -->
-    <header class="header">
-      <div class="container-md">
-        <div class="row justify-content-md-center">
-          <div class="col-md">
-            <h1 class="display-1">Hi, I'm Thalia</h1>
-            <p class="lead">Senior IT Student @ GMU</p>
-          </div>
-          <div class="col-md justify-content-left">
-            <!-- Headshot -->
-            <img src="img/me.jpg" alt="My Headshot" class="headshot" />
-          </div>
-        </div>
-        <div id="learn-more-row" class="row justify-content-md-center">
-          <div class="col-md">
-            <p class="lead">Scroll down to learn more about me!</p>
-          </div>
-        </div>
-      </div>
-    </header>
-    <main class="main">
-      <!-- Solid Divider -->
-      <hr class="solid-divider" />
-
-      <!-- Full Name section -->
-      <section id="name">
-        <div class="container-md text-center">
-          <div class="row">
-            <div class="col">
-              <h2>Full Name</h2>
-              <h3>Thalia Edwards</h3>
+    <main>
+      <!-- Hero: first impression, short pitch, and the most important CTA. -->
+      <header id="home" class="hero section-shell">
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">IT Graduate · builder · certified nerd</p>
+            <h1>Hi, I’m Thalia.</h1>
+            <p class="hero-lead">
+              I enjoy building web experiences that feel fun to explore and are accessible to all. I get my hands dirty building things that are both functional and visually appealing. All while keeping a focus on clean code and good vibes.
+            </p>
+            <p class="hero-body">
+              Scroll to see more about my work and the technologies I’m passionate about!
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects">See projects</a>
+              <a class="button button-secondary" href="#contact">Contact me</a>
             </div>
-            <div class="col">
-              <img id="name-logo" src="img/Logo.png" alt="Logo" />
+            <div class="hero-badges" aria-label="Quick facts">
+              <span class="pill">Education: George Mason University · May 2026</span>
+              <span class="pill">Notable Projects: anime tracker · capstone project · hackathon</span>
+              <span class="pill">Main Interests: Custom keyboards · PCs · gaming</span>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- Solid Divider -->
-      <hr class="solid-divider" />
-
-      <!-- Career objective section -->
-      <section id="career-objective">
-        <h2>Career Objective</h2>
-        <p>
-          I am an aspiring software developer studying Information Technology at
-          George Mason University. With skills in programming, databases, and a
-          strong passion for emerging technologies, I am eager to contribute
-          technical expertise and problem-solving abilities to dynamic
-          environments while continuing to grow with hands-on experience in
-          innovative tools and technologies.
-        </p>
-      </section>
-
-      <!-- Solid Divider -->
-      <hr class="solid-divider" />
-
-      <!-- Contact section -->
-      <section id="contact">
-        <h2>Contact Information</h2>
-        <div class="contact-cards">
-          <div id="mail-card" class="card">
-            <a href="mailto:thalia.edwards2203@gmail.com">
-              <img src="img/gmail.png" class="card-img-top" alt="Gmail logo"
-            /></a>
-            <div class="card-body">
-              <h5 class="card-title">Email</h5>
-              <p class="card-text">
-                I respond to emails within 24-48 hours. Please feel free to
-                reach out with any questions, opportunities, or just to say hi!
-              </p>
-            </div>
-          </div>
-          <div id="linkedin-card" class="card">
-            <a
-              href="https://www.linkedin.com/in/thaliaedwards24"
-              target="_blank"
-            >
-              <img
-                src="img/linkedin.png"
-                class="card-img-top"
-                alt="LinkedIn logo"
-            /></a>
-            <div class="card-body">
-              <h5 class="card-title">LinkedIn</h5>
-              <p class="card-text">Let's connect!</p>
+          <div class="hero-card reveal">
+            <img
+              src="img/me.jpg"
+              alt="Portrait of Thalia Edwards"
+              class="hero-photo"
+            />
+                <h2>About Me</h2>
+                <p>
+                  Determined, outgoing, and a bit chronically online. I like good UI, clean code,and projects with a good challenge.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
-      <!-- Solid Divider -->
-      <hr class="solid-divider" />
-
-      <!-- Education section -->
-      <section id="education">
-        <div class="container-md text-center">
-          <div class="row">
-            <div class="col">
-              <h2>Education</h2>
-              <h3>Bachelor of Science in Information Technology</h3>
-              <h4>George Mason University · May 2026</h4>
-            </div>
-            <div class="col">
-              <img
-                src="img/gmuLogo.png"
-                alt="GMU Logo"
-                class="education-logo"
-              />
-            </div>
-          </div>
+      <!-- Featured projects: the recruiter scan path. -->
+      <section id="projects" class="section-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Featured work</p>
+          <h2>Three projects that should do the heavy lifting.</h2>
+          <p>
+            These are the projects I’d want recruiters to remember: one that
+            proves I can handle a bigger build, one that shows I can move fast
+            in a team setting, and one that shows my taste as a front-end
+            builder.
+          </p>
         </div>
-      </section>
-
-      <!-- Solid Divider -->
-      <hr class="solid-divider" />
-
-      <!-- Skills section -->
-      <section id="skills">
-        <h2>Skills</h2>
-        <div id="skills-card" class="card">
-          <div class="card-body">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item-dark">
-                <h4>Programming:</h4>
-                Python, JavaScript (Node.js), C++, HTML/CSS
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <div class="project-topline">
+              <span class="project-type">Senior capstone</span>
+              <span class="project-status">Featured</span>
+            </div>
+            <h3>Capstone project</h3>
+            <p>
+              My most important academic project, built to show full-stack
+              thinking, collaboration, and the ability to turn a class-sized
+              idea into something polished and presentable.
+            </p>
+            <ul class="project-points">
+              <li>Showcases architecture, planning, and execution.</li>
+              <li>
+                Best place to highlight your strongest technical decisions.
               </li>
-              <li class="list-group-item-dark">
-                <h4>Tools & Workflows:</h4>
-                Git, VS Code, unit testing, basic CI/CD concepts, Postman
-              </li>
-              <li class="list-group-item-dark">
-                <h4>Backend & Databases:</h4>
-                REST APIs, PL/SQL, SQL/MySQL basics
-              </li>
-              <li class="list-group-item-dark">
-                <h4>OS & Platforms:</h4>
-                Linux, Windows
+              <li>Should include a clear outcome and your specific role.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">Express</span>
+            </div>
+            <div class="project-actions">
+              <a class="button button-secondary button-sm" href="career.html">
+                Read case study
+              </a>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-topline">
+              <span class="project-type">Hackathon</span>
+              <span class="project-status">Fast ship</span>
+            </div>
+            <h3>Hackathon project</h3>
+            <p>
+              The project that proves I can think on my feet, collaborate fast,
+              and still make something that looks intentional under pressure.
+            </p>
+            <ul class="project-points">
+              <li>Best used to show speed, teamwork, and problem solving.</li>
+              <li>Great spot for an eye-catching demo or live link.</li>
+              <li>Highlight the challenge and the cleverest feature.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">API work</span>
+              <span class="tag">UI polish</span>
+              <span class="tag">Teamwork</span>
+              <span class="tag">Ship fast</span>
+            </div>
+            <div class="project-actions">
+              <a
+                class="button button-secondary button-sm"
+                href="education.html"
+              >
+                Read case study
+              </a>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-topline">
+              <span class="project-type">Advanced web dev</span>
+              <span class="project-status">Personal favorite</span>
+            </div>
+            <h3>Anime tracker site</h3>
+            <p>
+              My final project for advanced web development, built to track
+              anime in a way that feels useful, clean, and a little more
+              personal than a standard class assignment.
+            </p>
+            <ul class="project-points">
+              <li>Good example of product thinking and UI structure.</li>
+              <li>Can show data flow, state management, and persistence.</li>
+              <li>
+                Perfect for showing taste, fandom, and technical skill together.
               </li>
             </ul>
+            <div class="tag-row">
+              <span class="tag">Next.js</span>
+              <span class="tag">React</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">Anime</span>
+            </div>
+            <div class="project-actions">
+              <a
+                class="button button-secondary button-sm"
+                href="work-experience.html"
+              >
+                Read case study
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- About: a fast summary of how I think and work. -->
+      <section id="about" class="section-shell split-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">About me</p>
+          <h2>Personality first, but still serious about the craft.</h2>
+        </div>
+        <div class="split-layout">
+          <div class="story-card reveal">
+            <h3>How I work</h3>
+            <p>
+              I like building things that have a point of view. If a project can
+              be useful and charming at the same time, that is usually where I’m
+              happiest.
+            </p>
+            <p>
+              I care about clean structure, accessible UI, and details that make
+              the difference between “this works” and “I want to spend time
+              here.”
+            </p>
+          </div>
+          <div class="story-card story-card-accent reveal">
+            <h3>What you should know</h3>
+            <div class="stat-grid">
+              <div>
+                <strong>Senior IT student</strong>
+                <span>George Mason University</span>
+              </div>
+              <div>
+                <strong>Full-stack curiosity</strong>
+                <span>React, Next.js, Express, TypeScript, Supabase</span>
+              </div>
+              <div>
+                <strong>Portfolio vibe</strong>
+                <span>Playful, polished, a little nerdy</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <!-- Solid Divider -->
-      <hr class="solid-divider" />
 
-      <!-- Work experience section -->
-      <section id="work-experience">
-        <h2>Work Experience</h2>
-        <h3>HTML & CSS & JavaScript Trainee · The Global Career Accelerator</h3>
-        Designed and built dynamic, interactive web applications and games using
-        HTML, CSS, Bootstrap, and JavaScript, integrating third-party APIs to
-        enhance functionality. Improved and debugged existing projects by
-        leveraging developer documentation, UX research, and prototyping best
-        practices. Collaborated with a global team in an agile, DevOps-style
-        environment, using Git and GitHub for version control, code reviews, and
-        continuous integration.
+      <!-- Interests: personality signals that recruiters can remember. -->
+      <section id="interests" class="section-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Interests</p>
+          <h2>The nerd radar.</h2>
+          <p>
+            This is the part that makes the site feel like you and not a generic
+            portfolio template.
+          </p>
+        </div>
+        <div class="interest-grid">
+          <div class="interest-card reveal">
+            <span>⌨</span>
+            <h3>Custom keyboards</h3>
+            <p>
+              Switches, keycaps, and the endless rabbit hole of “just one more
+              board.”
+            </p>
+          </div>
+          <div class="interest-card reveal">
+            <span>🖥</span>
+            <h3>Building PCs</h3>
+            <p>
+              Part engineering puzzle, part toy box, part cable-management
+              therapy.
+            </p>
+          </div>
+          <div class="interest-card reveal">
+            <span>🎮</span>
+            <h3>Gaming</h3>
+            <p>Competitive, cozy, and occasionally way too invested.</p>
+          </div>
+          <div class="interest-card reveal">
+            <span>🎌</span>
+            <h3>Watching anime</h3>
+            <p>
+              Good stories, strong visuals, and excellent taste in opening
+              themes.
+            </p>
+          </div>
+          <div class="interest-card reveal">
+            <span>🎵</span>
+            <h3>Music</h3>
+            <p>
+              Cochise, Tyler, PinkPantheress, Playboi Carti, and Malcolm Todd
+              are on rotation.
+            </p>
+          </div>
+          <div class="interest-card reveal">
+            <span>🃏</span>
+            <h3>Persona series</h3>
+            <p>
+              Style, atmosphere, and enough depth to keep me obsessed for a long
+              time.
+            </p>
+          </div>
+          <div class="interest-card reveal">
+            <span>▶</span>
+            <h3>YouTubers</h3>
+            <p>CoryxKenshin, MKBHD, and Switch and Click stay in the mix.</p>
+          </div>
+          <div class="interest-card reveal">
+            <span>{ }</span>
+            <h3>Programming</h3>
+            <p>
+              Because I like making things and I like understanding how they
+              work.
+            </p>
+          </div>
+        </div>
       </section>
-      <!-- Solid Divider -->
-      <hr class="solid-divider" />
-      <footer class="footer">
-        <p>&copy; 2026 Thalia Edwards. All rights reserved.</p>
+
+      <!-- Stack: a compact skills snapshot for quick scanning. -->
+      <section id="skills" class="section-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Stack</p>
+          <h2>What I bring to a team.</h2>
+        </div>
+        <div class="skill-grid">
+          <article class="skill-card reveal">
+            <h3>Frontend</h3>
+            <p>React, Next.js, TypeScript, JavaScript, HTML, CSS, Bootstrap</p>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Backend</h3>
+            <p>Express, REST APIs, Node.js, Supabase, SQL, database basics</p>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Workflow</h3>
+            <p>Git, GitHub, VS Code, debugging, testing mindset, deployment</p>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Focus areas</h3>
+            <p>
+              UI polish, accessibility, responsive layouts, and story-driven
+              design
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact: easy ways to reach me without hunting around. -->
+      <section id="contact" class="section-shell contact-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s make the next version of this portfolio even better.</h2>
+          <p>
+            If you want a recruiter-friendly walkthrough of my projects, or you
+            just want to talk about keyboards, anime, or what build parts are
+            overpriced right now, I’m open.
+          </p>
+        </div>
+        <div class="contact-grid">
+          <a
+            class="contact-card reveal"
+            href="mailto:thalia.edwards2203@gmail.com"
+          >
+            <img src="img/gmail.png" alt="Gmail logo" />
+            <div>
+              <h3>Email</h3>
+              <p>thalia.edwards2203@gmail.com</p>
+            </div>
+          </a>
+          <a
+            class="contact-card reveal"
+            href="https://www.linkedin.com/in/thaliaedwards24"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="img/linkedin.png" alt="LinkedIn logo" />
+            <div>
+              <h3>LinkedIn</h3>
+              <p>Let’s connect</p>
+            </div>
+          </a>
+          <a
+            class="contact-card reveal"
+            href="https://github.com/taeXgh"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="img/Logo.png" alt="GitHub and personal brand logo" />
+            <div>
+              <h3>GitHub</h3>
+              <p>See the code</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer: keep it short so the page does not over-explain itself. -->
+      <footer class="footer section-shell">
+        <p>
+          &copy; 2026 Thalia Edwards. Built with a little chaos and a lot of
+          care.
+        </p>
       </footer>
     </main>
 

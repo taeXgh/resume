@@ -3,31 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Thalia Edwards</title>
+    <title>Anime Tracker | Thalia Edwards</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-
     <link rel="stylesheet" href="style.css" />
   </head>
-
-  <body
-    data-bs-spy="scroll"
-    data-bs-target="#navbar"
-    data-bs-offset="80"
-    tabindex="0"
-  >
-    <!-- Nav bar -->
-    <nav
-      id="navbar"
-      class="navbar navbar-expand-lg navbar-dark sticky-top"
-      height="80"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"> visitor@TE:~$ </a>
+  <body tabindex="0">
+    <!-- Shared nav shell: this page holds the anime tracker story. -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid site-shell">
+        <a class="navbar-brand brand-mark" href="index.html">visitor@TAE:~$</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -40,63 +36,110 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="name.html">Full Name</a>
+              <a class="nav-link" href="name.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="career.html">Career Objective</a>
+              <a class="nav-link" href="career.html">Capstone</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="education.html">Hackathon</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#anime-tracker">Anime Tracker</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="skills.html">Stack</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="education.html">Education</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="skills.html">Skills</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="work-experience.html">Work Experience</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://github.com/taeXgh"
-                target="_blank"
-                >GitHub</a
-              >
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Main header -->
-    <main class="main">
-      <!-- Solid Divider -->
-      <hr class="solid-divider" />
+    <main>
+      <!-- Project intro: the fandom-flavored build that still needs clean product thinking. -->
+      <header class="section-shell hero">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Advanced web development</p>
+          <h1>The anime tracker project.</h1>
+          <p>
+            This is the build that should show taste, product thinking, and
+            front-end polish in one place.
+          </p>
+        </div>
+      </header>
 
- <!-- Work experience section -->
-      <section id="work-experience">
-        <h2>Work Experience</h2>
-        <h3>HTML & CSS & JavaScript Trainee · The Global Career Accelerator</h3>
-        <p class="lead">Designed and built dynamic, interactive web applications and games using
-        HTML, CSS, Bootstrap, and JavaScript, integrating third-party APIs to
-        enhance functionality. Improved and debugged existing projects by
-        leveraging developer documentation, UX research, and prototyping best
-        practices. Collaborated with a global team in an agile, DevOps-style
-        environment, using Git and GitHub for version control, code reviews, and
-        continuous integration.</p>
+      <!-- Main content: describe the product and the features worth calling out. -->
+      <section id="anime-tracker" class="section-shell split-section">
+        <div class="split-layout">
+          <article class="story-card reveal">
+            <h2>What it does</h2>
+            <p>
+              The tracker is meant to help organize what I am watching, what I
+              want to watch, and what I am done with, without making the
+              interface feel heavy.
+            </p>
+            <p>
+              It is the most personal of the three featured projects, which
+              makes it a good place to show my style as a builder.
+            </p>
+          </article>
+          <article class="story-card story-card-accent reveal">
+            <h2>Feature set</h2>
+            <div class="tag-row">
+              <span class="tag">React</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">State management</span>
+              <span class="tag">Anime list</span>
+            </div>
+            <p class="mt-3">
+              Add details about search, status tracking, and whatever design
+              choices made the project feel like yours.
+            </p>
+          </article>
+        </div>
       </section>
 
-      <!-- Solid Divider -->
-      <hr class="solid-divider" />
-      <footer class="footer">
-        <p>&copy; 2026 Thalia Edwards. All rights reserved.</p>
+      <!-- Main content: a few concrete notes for the final project writeup. -->
+      <section class="section-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Notes to add</p>
+          <h2>The exact parts I should describe later.</h2>
+        </div>
+        <div class="skill-grid">
+          <article class="skill-card reveal">
+            <h3>UI</h3>
+            <p>How the tracker stays readable and easy to scan.</p>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Data</h3>
+            <p>How watch status and saved content are stored.</p>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Personal taste</h3>
+            <p>Why this project feels more like me than the others.</p>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Future ideas</h3>
+            <p>Filters, ratings, or any feature I wish I had time for.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Footer: same end point as the other pages. -->
+      <footer class="footer section-shell">
+        <p>
+          &copy; 2026 Thalia Edwards. Built with a little chaos and a lot of
+          care.
+        </p>
       </footer>
     </main>
 
