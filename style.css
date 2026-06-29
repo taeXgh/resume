@@ -179,7 +179,10 @@ a {
   font-size: 0.78rem;
   color: var(--aqua);
 }
-
+#featured-pill {
+  background: var(--gold);
+  color: #071019;
+}
 /* Intro copy in the hero gets a little extra breathing room. */
 .hero-lead {
   max-width: 42rem;
